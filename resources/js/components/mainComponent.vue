@@ -16,6 +16,7 @@
                     <th>Year</th>
                     <th>Director</th>
                     <th>Genre</th>
+                    <th>Rating</th>
                 </tr>
                 <tr v-for="(movie ,id ) in movies" :key="id">
                     <!-- <td>//Show image here</td> -->
@@ -27,6 +28,7 @@
                             {{ category }}<span v-if="index < movie.categoryName.length - 1">, </span>
                         </span>
                     </td>
+                    <td>{{ movie.rate }}/10</td>
             </tr>
 
         </table>

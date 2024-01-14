@@ -41,6 +41,7 @@ class MoviesController extends Controller
         $movie->tittle = $request->tittle;
         $movie->director = $request->director;
         $movie->year = $request->year;
+        $movie->rate = $request->rating;
         $movie->save();
         $movieId = $movie->id;
         $categoryMovie = new CategoryMovie();

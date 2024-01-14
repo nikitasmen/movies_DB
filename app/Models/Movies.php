@@ -13,6 +13,7 @@ class Movies extends Model
         'tittle',
         'year',
         'director',
+        'rate'
     ];
 
     public function categories()

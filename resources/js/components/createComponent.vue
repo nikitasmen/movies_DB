@@ -17,6 +17,8 @@
                 <label for="movieGenre">Enter the genre of the movie</label>
                 <input type="text"  id="movieGenre" v-model="genre">
                 <br>
+                <label for="movieRating">Enter the rating of the movie(0,10)</label>
+                <input type="range"  id="movieRating" min="0" max="10" v-model="rating">
                 <div class="clearfix">
                     <router-link to="/" custom v-slot="{ navigate }">
                         <button class="cancelBtn" @click="navigate">Cancel</button>
@@ -36,6 +38,7 @@
                 year: '',
                 director: '',
                 genre: '',
+                rating: '',
             }
         },
         methods: {
@@ -45,9 +48,10 @@
                     year: this.year,
                     director: this.director,
                     genre: this.genre,
+                    rating: this.rating,
                 })
                 .then(response => {
-                    // this.$router.push({ name: 'home' })
+                    this.$router.push({ name: 'home' })
                 })
                 .catch(e => {
                     this.errors.push(e)
