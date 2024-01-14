@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/movies', [MoviesController::class , 'getMovies' ]);
 Route::post('/movies', [MoviesController::class , 'addMovie' ]);
+Route::get('/movies/search', [MoviesController::class , 'searchMovie' ]);

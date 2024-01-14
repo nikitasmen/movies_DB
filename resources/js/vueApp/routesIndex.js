@@ -8,5 +8,12 @@ export default[
         path: '/create',
         name: 'create',
         component: () => import("@/components/createComponent.vue")
+    },
+    {
+        path: '/search:search',
+        name: 'search',
+        component: () => import("@/components/searchComponent.vue"),
+        props: true
     }
+
 ]

@@ -4,7 +4,11 @@
         <p>Here you can see and edit all watched movies</p>
     </div>
     <div class="header">
-        <router-link to="/create" custom v-slot="{ navigate }">
+        <div class="search">
+            <input type="text" placeholder="Search.." name="search" v-model="search">
+            <button type="submit" @click="searchMovie">Search</button>
+        </div>
+            <router-link to="/create" custom v-slot="{ navigate }">
             <button class="addBtn" @click="navigate">Add a new movie</button>
         </router-link>
     </div>
@@ -43,6 +47,7 @@ import axios from 'axios';
 export default {
     data() {
         return {
+            search: '',
             movies: [],
         }
     },
@@ -52,6 +57,20 @@ export default {
                 this.movies = response.data;
             });
     },
+    methods: {
+        searchMovie() {
+            axios.get('/api/movies/search', {
+                params: {
+                   search: this.search
+            }
+            }).then(response => {
+                this.$router.push({ name: 'search',
+                params: { search: JSON.stringify(response.data)}
+            })
+            });
+        }
+    }
+
 
 }
 </script>
