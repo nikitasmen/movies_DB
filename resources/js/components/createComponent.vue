@@ -29,6 +29,9 @@
         </form>
     </div>
 </template>
+<style scoped>
+    @import './css/createForm.css';
+</style>
 <script>
     import axios from 'axios';
     export default{

@@ -3,12 +3,12 @@
         <h1>My Movies DB</h1>
         <p>Here you can see and edit all watched movies</p>
     </div>
-    <div>
+    <div class="header">
         <router-link to="/create" custom v-slot="{ navigate }">
             <button class="addBtn" @click="navigate">Add a new movie</button>
         </router-link>
     </div>
-    <div class="moviesTable">
+    <div class="mainDiv">
         <table>
 
                 <tr>
@@ -34,6 +34,9 @@
         </table>
     </div>
 </template>
+<style>
+    @import './css/menu.css';
+</style>
 <script>
 import axios from 'axios';
 
